@@ -1,9 +1,14 @@
 import React from 'react';
-import Header from "../Component/header";
+import Header from "../Component/Header";
+import DisplayBook from "../Component/DisplayBook";
 function Home() {
     return (
 
-        <Header/>
+        <div>
+            <Header/>
+            <DisplayBook/>
+
+        </div>
 
     );
 }

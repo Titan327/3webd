@@ -6,7 +6,7 @@ function Header() {
             <div className="container">
                 <div className="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
                     <a href="/" className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                        <img src="/image/logo.png" alt="Description de l'image" style={{ width: '75px', height: '75px' }}/>
+                        <img src="/image/logo.png" alt="Description de l'image" style={{ width: '55px', height: '55px' }}/>
                     </a>
 
                     <ul className="nav col-12 col-lg-auto mx-auto mb-2 mb-md-0 justify-content-center">
