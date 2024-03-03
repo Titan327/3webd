@@ -1,17 +1,14 @@
 import React from "react";
 import BookCell from "./BookCell";
 
-function DisplayBook() {
+function DisplayBook({Data}) {
     return (
 
         <div className="container">
             <div className="row">
-                <BookCell/>
-                <BookCell/>
-                <BookCell/>
-                <BookCell/>
-                <BookCell/>
-                <BookCell/>
+                {Data.map(item => (
+                    <BookCell key={item.id} bookLink={item.book}/>
+                ))}
             </div>
         </div>
 

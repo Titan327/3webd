@@ -1,0 +1,18 @@
+.description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.title {
+    line-height: 1.4em; /* Hauteur de ligne */
+    height: 2.8em; /* Hauteur fixe pour deux lignes */
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
