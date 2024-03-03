@@ -22,7 +22,7 @@ function Header() {
                         <li><a href="/filter" className="nav-link px-2 text-white">Advanced search</a></li>
                     </ul>
 
-                    <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="/search" method="GET">
+                    <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="/src/Pages/Search" method="GET">
                         <div className="input-group">
                             <input name="q" type="search" className="form-control form-control-dark"
                                    placeholder="Search..." aria-label="Search"/>

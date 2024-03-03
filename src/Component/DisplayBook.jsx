@@ -7,7 +7,7 @@ function DisplayBook({Data}) {
         <div className="container">
             <div className="row">
                 {Data.map(item => (
-                    <BookCell key={item.id} bookLink={item.book}/>
+                    <BookCell key={item.id} bookLink={item.work}/>
                 ))}
             </div>
         </div>

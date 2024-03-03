@@ -26,11 +26,10 @@ function Home() {
                     if (tab.changes[1]) {
                         return {
                             id: tab.id,
-                            book: tab.changes[1].key
+                            work: tab.changes[1].key
                         };
                     }
                 }).filter(value => value !== undefined);
-                console.log(json);
                 setNews(data);
             } catch (error) {}
         };
@@ -41,7 +40,7 @@ function Home() {
         <div>
             <Header/>
             <div className="banner" style={{overflow: "hidden", height: "300px"}}>
-                <img src="/image/Home/banner2.jpg" alt="Description de l'image" className="img-fluid"/>
+                <img src="/image/Home/banner2-modified.jpg" alt="Banner" className="img-fluid"/>
 
                 <div className="banner-text">
                     <h1>Recently Added Book</h1>

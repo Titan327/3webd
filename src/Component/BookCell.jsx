@@ -10,7 +10,6 @@ function BookCell({bookLink}) {
             try {
                 const response = await fetch(`https://openlibrary.org${bookLink}.json`);
                 const json = await response.json();
-                console.log(json);
                 setBook(json);
             } catch (error) {}
         };
