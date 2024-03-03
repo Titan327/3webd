@@ -1,0 +1,27 @@
+.banner-text {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    font-size: 200%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Noir semi-transparent */
+}
+
+.banner-text h1 {
+    font-size: 1.5em;
+    /*background-color: #50b942;
+    padding: 10px;
+    border-radius: 10px;*/
+    color: white;
+    font-weight: bold;
+}
