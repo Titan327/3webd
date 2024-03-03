@@ -3,6 +3,7 @@ import Header from "../Component/Header";
 import DisplayBook from "../Component/DisplayBook";
 import Footer from "../Component/Footer";
 import '../Style/Home.css';
+import Spinner from "../Component/Spinner";
 
 function Home() {
     const [news, setNews] = useState([]);
@@ -16,6 +17,8 @@ function Home() {
     const year = currentDate.getFullYear().toString().padStart(2, '0');
     const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
     const day = currentDate.getDate().toString().padStart(2, '0');
+
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -31,7 +34,11 @@ function Home() {
                     }
                 }).filter(value => value !== undefined);
                 setNews(data);
-            } catch (error) {}
+            } catch (error) {
+
+            }finally {
+                setLoading(false);
+            }
         };
         fetchData();
     },[]);
@@ -43,10 +50,10 @@ function Home() {
                 <img src="/image/Home/banner2-modified.jpg" alt="Banner" className="img-fluid"/>
 
                 <div className="banner-text">
-                    <h1>Recently Added Book</h1>
+                    <h1>Recently Added Books</h1>
                 </div>
             </div>
-            <DisplayBook Data={news}/>
+            {loading ? <Spinner /> : <DisplayBook Data={news}/>}
             <Footer/>
         </div>
     );

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import Header from "../Component/Header";
-import DisplayBook from "../Component/DisplayBook";
 import Footer from "../Component/Footer";
 import '../Style/Home.css';
 import { useLocation } from "react-router-dom";
@@ -16,7 +15,6 @@ function Book() {
     const [wikiText, setWikiText] = useState([]);
 
     useEffect(() => {
-        // Fonction pour récupérer la liste des utilisateurs
         const fetchUsers = async () => {
             try {
                 const response = await fetch(`https://openlibrary.org/works/${book}.json`);
@@ -31,7 +29,6 @@ function Book() {
 
 
     useEffect(() => {
-        // Vérifier si bookData.title est défini avant de manipuler bookData.title
         if (bookData.title) {
             const titleWiki = bookData.title.replace(/ /g, "_");
             const fetchWiki = async () => {

@@ -4,6 +4,8 @@ import DisplayBook from "../Component/DisplayBook";
 import Footer from "../Component/Footer";
 import '../Style/Home.css';
 import {useLocation} from "react-router-dom";
+import BookCell from "../Component/BookCell";
+import Spinner from "../Component/Spinner";
 
 function Search() {
 
@@ -15,6 +17,7 @@ function Search() {
     const page = params.get('page');
 
     const [news, setNews] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -29,7 +32,11 @@ function Search() {
                     };
                 });
                 setNews(data);
-            } catch (error) {}
+            } catch (error) {
+
+            }finally {
+                setLoading(false);
+            }
         };
         fetchData();
     },[]);
@@ -44,7 +51,7 @@ function Search() {
                     <h1>Result for: {searchTerm}</h1>
                 </div>
             </div>
-
+            {loading ? <Spinner /> : <DisplayBook Data={news}/>}
             <Footer/>
         </div>
     );

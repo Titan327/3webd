@@ -4,13 +4,23 @@ import '../Style/bookCell.css';
 function BookCell({bookLink}) {
 
     const [book, setBook] = useState([]);
+    const [bookId, setBookId] = useState(["#"])
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch(`https://openlibrary.org${bookLink}.json`);
-                const json = await response.json();
-                setBook(json);
+                if (bookLink.includes("works")){
+                    const response = await fetch(`https://openlibrary.org${bookLink}.json`);
+                    const json = await response.json();
+                    setBook(json);
+                    //setBookId(json.works[0].replace("/works/", ''));
+                    console.log(bookLink);
+                    if (json.works){
+                        setBookId(json.works[0].replace("/works/", ''));
+                    }else {
+                        setBookId(json.key.replace("/works/", ''));
+                    }
+                }
             } catch (error) {}
         };
         fetchData();
@@ -25,7 +35,7 @@ function BookCell({bookLink}) {
                 <div className="card-body">
                     <h5 className="card-title title">{book.title ? book.title : "No tittle"}</h5>
                     <p className="card-text description">{book.description && book.description.value ? book.description.value : "No description... Yet !"}</p>
-                    <a href="#" className="btn btn-primary">Go somewhere</a>
+                    <a href={`/Book?id=${bookId}`} className="btn btn-primary">See more</a>
                 </div>
             </div>
         </div>
