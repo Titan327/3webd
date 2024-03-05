@@ -33,9 +33,6 @@ function Pagination({nbOfPage}) {
         }
     };
 
-    console.log(currentPage);
-    console.log(nbOfPage);
-
 
     let element;
 
