@@ -6,6 +6,7 @@ import '../Style/Home.css';
 import {useLocation} from "react-router-dom";
 import BookCell from "../Component/BookCell";
 import Spinner from "../Component/Spinner";
+import Pagination from "../Component/Pagination";
 
 function Search() {
 
@@ -18,13 +19,15 @@ function Search() {
 
     const [news, setNews] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [nbPages, setnbPages] = useState();
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const response = await fetch(`https://openlibrary.org/search.json?title=${searchTerm}&limit=${limit}&page=${page}`);
                 const json = await response.json();
-                const tmp_res = json.docs
+                setnbPages(Math.ceil(json.numFound / limit));;
+                const tmp_res = json.docs;
                 let data = tmp_res.map(tab => {
                     return {
                         key : tab._version_,
@@ -52,6 +55,7 @@ function Search() {
                 </div>
             </div>
             {loading ? <Spinner /> : <DisplayBook Data={news}/>}
+            <Pagination nbOfPage={nbPages}/>
             <Footer/>
         </div>
     );
