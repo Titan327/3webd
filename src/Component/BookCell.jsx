@@ -13,8 +13,6 @@ function BookCell({bookLink}) {
                     const response = await fetch(`https://openlibrary.org${bookLink}.json`);
                     const json = await response.json();
                     setBook(json);
-                    //setBookId(json.works[0].replace("/works/", ''));
-                    console.log(bookLink);
                     if (json.works){
                         setBookId(json.works[0].replace("/works/", ''));
                     }else {

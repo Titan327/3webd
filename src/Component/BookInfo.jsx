@@ -53,7 +53,6 @@ function BookInfo({bookData,wikiText}) {
                             tabData.push(row);
                         }
                     }
-                    console.log(json);
                     setScores(tabData);
                 }
             } catch (e) {}
@@ -89,7 +88,6 @@ function BookInfo({bookData,wikiText}) {
                             tabData.push(row);
                         }
                     }
-                    console.log(json);
                     setRead(tabData);
                 }
             } catch (e) {}
