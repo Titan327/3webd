@@ -6,6 +6,7 @@ import '../Style/Home.css';
 import {useLocation} from "react-router-dom";
 import BookCell from "../Component/BookCell";
 import Spinner from "../Component/Spinner";
+import Pagination from "../Component/Pagination";
 
 function Search() {
 
@@ -13,6 +14,8 @@ function Search() {
 
     const location = useLocation();
     const params = new URLSearchParams(location.search);
+
+    const [nbPages, setnbPages] = useState();
 
 
     let author = "";
@@ -23,6 +26,7 @@ function Search() {
     let publisher = "";
 
     if (params.get('author')){
+        author = author.replace(/\+/g, "_");
         author = "author="+params.get('author')+"&";
     }
     if (params.get('subject')){
@@ -50,6 +54,7 @@ function Search() {
             try {
                 const response = await fetch(`https://openlibrary.org/search.json?${author}${subject}${title}${publishYear}${lang}${publisher}limit=${limit}`);
                 const json = await response.json();
+                setnbPages(Math.ceil(json.numFound / limit));;
                 const tmp_res = json.docs
                 let data = tmp_res.map(tab => {
                     return {
@@ -139,6 +144,7 @@ function Search() {
 
             </div>
             {loading ? <Spinner/> : <DisplayBook Data={news}/>}
+            <Pagination nbOfPage={nbPages}/>
             <Footer/>
         </div>
     );

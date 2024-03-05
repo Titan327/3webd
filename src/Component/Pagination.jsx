@@ -162,7 +162,7 @@ function Pagination({nbOfPage}) {
 
     return (
 
-        <div className={"text-center"}>
+        <div className={"text-center"} data-testid="Pagination">
             <nav className={"d-flex justify-content-center align-items-center"} style={{marginTop: "2em"}}>
                 <ul className="pagination">
 
