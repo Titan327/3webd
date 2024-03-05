@@ -15,14 +15,16 @@ function Header() {
                     <a href="/" className="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                         <img src="/image/logo.png" alt="Description de l'image"
                              style={{width: '55px', height: '55px'}}/>
+                        <h3 style={{marginLeft: "25px"}}>BookInfo</h3>
                     </a>
+
 
                     <ul className="nav col-12 col-lg-auto mx-auto mb-2 mb-md-0 justify-content-center">
                         <li><a href="/" className="nav-link px-2 text-secondary">Home</a></li>
-                        <li><a href="/filter" className="nav-link px-2 text-white">Advanced search</a></li>
+                        <li><a href="/advanced-search" className="nav-link px-2 text-white">Advanced search</a></li>
                     </ul>
 
-                    <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="/search" method="GET">
+                    <form className="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" action="/Search" method="GET">
                         <div className="input-group">
                             <input name="q" type="search" className="form-control form-control-dark"
                                    placeholder="Search..." aria-label="Search"/>
