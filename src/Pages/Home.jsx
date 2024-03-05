@@ -10,8 +10,6 @@ function Home() {
 
     const limitRes = "9";
     const eventSearh = '/add-book';
-    //const eventSearh = '/update';
-    //const eventSearh = '';
 
     const currentDate = new Date();
     const year = currentDate.getFullYear().toString().padStart(2, '0');
@@ -44,7 +42,7 @@ function Home() {
     },[]);
 
     return (
-        <div>
+        <div data-testid="home">
             <Header/>
             <div className="banner" style={{overflow: "hidden", height: "300px"}}>
                 <img src="/image/Home/banner2-modified.jpg" alt="Banner" className="img-fluid"/>

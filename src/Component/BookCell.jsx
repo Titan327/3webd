@@ -27,7 +27,7 @@ function BookCell({bookLink}) {
 
     return (
 
-        <div className="col-md-4 mt-3">
+        <div className="col-md-4 mt-3" data-testid="BookCell">
             <div className="card" style={{width: '18rem'}}>
                 <img className="card-img-top" src={`https://covers.openlibrary.org/b/id/${book.covers}-M.jpg`} style={{ objectFit: 'cover', width: '100%', height: '200px' }} alt="Card image"/>
                 <div className="card-body">
