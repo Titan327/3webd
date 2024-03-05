@@ -100,6 +100,7 @@ function BookInfo({bookData,wikiText}) {
     },[bookData]);
 
 
+    const link = `https://fr.wikipedia.org/wiki/${bookData.title}`;
 
     return (
 
@@ -117,6 +118,9 @@ function BookInfo({bookData,wikiText}) {
                 <h4 className="box-title mt-5">Wikipedia Info</h4>
                 <p>
                     {wikiText}
+                    <br/>
+                    <a href={link}>{link}</a>
+
                 </p>
                 <h4 className="box-title mt-5">Author</h4>
                 <p>
